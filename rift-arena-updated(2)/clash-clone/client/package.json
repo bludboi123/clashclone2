@@ -1,0 +1,19 @@
+{
+  "name": "@clash-clone/client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@clash-clone/shared": "0.1.0",
+    "colyseus.js": "^0.15.23",
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4"
+  }
+}
