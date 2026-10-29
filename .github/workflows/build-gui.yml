@@ -1,0 +1,23 @@
+name: Build standalone GUI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S MCEduClient-GUI/MCEduClient-GUI -B build -A x64
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcedu-client-gui
+          path: build/Release/mcedu_client.exe
